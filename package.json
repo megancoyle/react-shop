@@ -8,7 +8,6 @@
   "scripts": {
     "preinstall": "node tools/nodeVersionCheck.js",
     "setup": "node tools/setup/setupMessage.js && npm install && node tools/setup/setup.js",
-    "remove-demo": "babel-node tools/removeDemo.js",
     "start-message": "babel-node tools/startMessage.js",
     "prestart": "npm-run-all --parallel start-message",
     "start": "npm-run-all --parallel test:watch open:src lint:watch",
@@ -33,6 +32,7 @@
   "dependencies": {
     "object-assign": "4.1.0",
     "react": "15.4.1",
+    "react-bootstrap": "^0.30.7",
     "react-dom": "15.4.1",
     "react-redux": "5.0.1",
     "react-router": "3.0.0",
