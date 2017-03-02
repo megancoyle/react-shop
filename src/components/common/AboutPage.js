@@ -4,7 +4,7 @@ const About = () => {
   return (
     <div>
       <h1>About Page</h1>
-      <p>More filler text</p>
+      <p>More filler  text</p>
     </div>
   );
 };
