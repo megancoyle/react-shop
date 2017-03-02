@@ -1,3 +1,7 @@
 // Set up your root reducer here...
  import { combineReducers } from 'redux';
- export default combineReducers;
+ import items from './itemReducers';
+
+ export default combineReducers({
+   items: items,
+ });

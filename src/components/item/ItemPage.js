@@ -1,4 +1,6 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import * as itemActions from '../../actions/itemActions';
 
 class Item extends React.Component{
   constructor(props){
@@ -6,7 +8,7 @@ class Item extends React.Component{
   }
 
   submitItem(input){
-    alert('Submitted')
+    this.props.createItem(input);
   }
 
   render(){
@@ -23,7 +25,7 @@ class Item extends React.Component{
           <form onSubmit={e => {
             e.preventDefault();
             var input = {title: titleInput.value};
-            this.submitBook(input);
+            this.submitItem(input);
             e.target.reset();
           }}>
             <input type="text" name="title" ref={node => titleInput = node}/>
@@ -35,4 +37,16 @@ class Item extends React.Component{
   }
 }
 
-export default Item;
+const mapStateToProps = (state, ownProps) => {
+  return {
+    items: state.items
+  }
+};
+
+const mapDispatchToProps = (dispatch) => {
+  return {
+    createItem: item => dispatch(itemActions.createItem(item))
+  }
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Item);
