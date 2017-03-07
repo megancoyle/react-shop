@@ -10,6 +10,7 @@ import '../node_modules/bootstrap/dist/css/bootstrap.min.css';
 import configureStore from './store/configureStore';
 
 const store = configureStore();
+
 store.dispatch(bookActions.fetchBooks());
 render(
   <Provider store={store}>
